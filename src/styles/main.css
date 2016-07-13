@@ -1,0 +1,61 @@
+/* common --start */
+body, p, div,iframe, header, article, footer, tt {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    font-size: 18px;
+}
+/* common --end */
+
+
+/* panel --start */
+.container {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0; 
+}
+.header {
+	height: 110px;
+	background-color: rgb(61, 177, 250);
+	border-bottom: solid 5px rgb(41, 151, 220);
+}
+.panel-body{
+	margin:0;
+	padding: 0;
+	border: 0;
+	display: inline-block;
+}
+.footer {
+	position: absolute;
+	top: 95%;
+
+}
+/* panel --end */
+
+
+/* treeMenu --start */
+.treeMenu {
+
+	float: left;
+}
+
+/* treeMenu --end */
+
+
+/* work-frame --start */
+.work-frame{
+	background-color: #eaf2ff;
+	
+	position: relative;
+	width: 1100px;
+	top: 0;
+	float: left;
+}
+.tab-close{
+	right: -10px;
+	top: -10px;
+
+	font-size: 12px;
+}
+/* work-frame --end */
