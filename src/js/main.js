@@ -1,25 +1,25 @@
 (function ($, window, document, undefined){
 
 	var tree = [{
-		text: "Parent1",
+		text: 'Parent1',
 		nodes: [{
-			text: "Child1",
+			text: 'Child1',
 			nodes: [{
-				text: "Grandchild1"
+				text: 'Grandchild1'
 			}, {
-				text: "Grandchild2"
+				text: 'Grandchild2'
 			}]
 		}, {
-			text: "Child2"
+			text: 'Child2'
 		}]
 	}, {
-		text: "Parent2"
+		text: 'Parent2'
 	}, {
-		text: "Parent3"
+		text: 'Parent3'
 	}, {
-		text: "Parent4"
+		text: 'Parent4'
 	}, {
-		text: "Parent5"
+		text: 'Parent5'
 	}];
 	function getTree() {
     // Some logic to retrieve, or generate tree structure
@@ -29,7 +29,7 @@
 	//绑定树形菜单的点击事件
 	$('#viewTree').on('nodeSelected',function(event,node){
 		console.log(node);
-		$(this).addTab({id:node.text,title:node.text,content:node.text +"<br>"+ node.text});
+		$(this).addTab({id:node.text,title:node.text,content:node.text +'<br>'+ node.text});
 	})
 	//初始化tab状态
 	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
@@ -38,4 +38,4 @@
 	})
 
 
-}(jQuery, window, document))	
+}(jQuery, window, document))

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>check from app</title>
+    <!-- build:css styles/vender.css -->
+	<link href="sources/charisma-master/css/bootstrap-cerulean.min.css" rel="stylesheet">
+    <link href="sources/charisma-master/css/charisma-app.css" rel="stylesheet">
+    <link href='sources/charisma-master/css/jquery.noty.css' rel='stylesheet'>
+    <link href='sources/charisma-master/css/noty_theme_default.css' rel='stylesheet'>
+
+    
+    <link href='sources/charisma-master/bower_components/chosen/chosen.min.css' rel='stylesheet'>
+     <!-- endbuild -->
+</head>
+<body>
+
+<!-- 借款人信息  start-->
+
+    <div id="editLoanInfo" class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2><i class="glyphicon glyphicon-edit"></i>借款人信息 XXXXXXXXXX(订单号)</h2>
+
+                <div class="box-icon">
+                    <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                            class="glyphicon glyphicon-chevron-up"></i></a>
+                </div>
+            </div>
+            <div class="box-content">        
+            	<form role="form" action="" method="post" id="loanInfoV">
+            		<div class="form-group form-inline col-xs-4">
+            			<label class="control-label">营业部</label>
+            			<input  type="text" name="" class="form-control input-sm">
+            		</div>
+            		<div class="form-group form-inline col-xs-4">
+            			<label class="control-label">业务员姓名</label>
+            			<input  type="text" name="" class="form-control input-sm">
+            		</div>
+            		<div class="form-group form-inline col-xs-4">
+            			<label class="control-label">所属客服姓名</label>
+            			<input  type="text" name="" class="form-control input-sm">
+            		</div>
+            		<div class="form-group form-inline col-xs-4">
+            			<label class="control-label">*客户姓名</label>
+            			<input  type="text" name="cusName" id="cusName" class="form-control input-sm" required>
+            		</div>
+            		<div class="form-group form-inline col-xs-4">
+            			<label class="control-label">*客户身份证</label>
+            			<input  type="text" name="cusId" id="cusId" class="form-control input-sm" required>
+            		</div>
+            		<div class="form-group form-inline col-xs-4">
+            			<label class="control-label">*客户来源</label>
+            			<select id="selectError" class="form-control input-sm">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+            		</div>
+            		<div class=" pull-right col-xs-8">
+            		<button type="submit" style="margin:10px;" class="btn btn-info"><i class="glyphicon glyphicon-check"></i>保存</button>
+            		<button type="button" style="margin:10px;" class="btn btn-warning noty" data-noty-options="{&quot;text&quot;:&quot;save alert&quot;,&quot;layout&quot;:&quot;center&quot;,&quot;type&quot;:&quot;warning&quot;}"><i class="glyphicon glyphicon-remove"></i>取消</button>
+            
+            		</div>
+            	</form>
+                            <br><br><br><br><br><br><br>
+            </div>
+
+        </div>
+    </div>
+<!-- 借款人信息  end-->
+<!--  抵押物信息  -->
+
+    <div id="pawnInfo" class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2><i class="glyphicon glyphicon-edit"></i>抵押物 XXXXXXXXXX</h2>
+
+                <div class="box-icon">
+                    <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                            class="glyphicon glyphicon-chevron-up"></i></a>
+                </div>
+            </div>
+            <div class="box-content">        
+            	<form role="form" action="" method="post" id="pawnInfoV">
+            		<div class="form-group col-xs-4 form-inline">
+            			<label class="control-label">*车架号</label>
+            			<input  type="text" name="" class="form-control input-sm">
+                        <button type="button" class="btn btn-default btn-sm">查</button>
+            		</div>
+            		<div class="form-group col-xs-4 form-inline">
+            			<label class="control-label">*发动机号</label>
+            			<input  type="text" name="" class="form-control input-sm disabled">
+            		</div>
+            		<div class="form-group col-xs-4 form-inline">
+            			<label class="control-label">车辆抵押状态</label>
+            			<select id="selectError" class="form-control input-sm">
+                            <option>已抵押</option>
+                            <option>未抵押</option>
+                        </select>
+            		</div>
+            		<div class="form-group col-xs-4 form-inline">
+            			<label class="control-label">车型代码</label>
+            			<input  type="text" name="" class="form-control input-sm">
+            		</div>
+            		<div class="form-group col-xs-4 form-inline">
+            			<label class="control-label">*车牌号码</label>
+            			<input  type="text" name="" class="form-control input-sm">
+            		</div>
+            		<div class="form-group col-xs-4 form-inline">
+            			<label class="control-label">*车辆查封状态</label>
+            			<!-- <div class="controls">？ -->
+                        <select id="selectError" class="form-control input-sm">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        <!-- </div> -->
+            		</div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">车辆品牌</label>
+                        <input  type="text" name="" class="form-control input-sm disabled">
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">*行驶公里数</label>
+                        <input  type="text" name="" class="form-control input-sm" value="333333">
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">*法院执行状况</label>
+                        <!-- <div class="controls">？ -->
+                        <select id="selectError" class="form-control input-sm">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        <!-- </div> -->
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">*车辆型号</label>
+                        <input  type="text" name="" class="form-control input-sm disabled">
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">*祼车价(元)</label>
+                        <input  type="text" name="" class="form-control input-sm" value="">
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">*年检到期时间</label>
+                        <input  type="date" name="" class="form-control input-sm" value="">
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">*排量</label>
+                        <input  type="text" name="" class="form-control input-sm disabled">
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">*颜色</label>
+                        <input  type="text" name="" class="form-control input-sm" value="333333">
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">年检扣款</label>
+                        <!-- <div class="controls">？ -->
+                        <select id="selectError" class="form-control input-sm">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">*国产/进口</label>
+                        <input  type="text" name="" class="form-control input-sm disabled">
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">*购买时间</label>
+                        <input  type="date" name="" class="form-control input-sm" value="">
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">*违单请况</label>
+                        <input  type="text" name="" class="form-control input-sm" value="2">
+                        <label class="control-label">条违章未处理</label>
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">*配置</label>
+                        <input  type="text" name="" class="form-control input-sm disabled">
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">*初次上牌时间</label>
+                        <input  type="date" name="" class="form-control input-sm" value="">
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">*扣分</label>
+                        <input  type="text" name="" class="form-control input-sm" value="2">
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">厂家</label>
+                        <input  type="text" name="" class="form-control input-sm disabled">
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">最后上牌时间</label>
+                        <input  type="date" name="" class="form-control input-sm" value="">
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">*违章扣款</label>
+                        <input  type="text" name="" class="form-control input-sm" value="2">
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">*年款</label>
+                        <input  type="text" name="" class="form-control input-sm disabled">
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">有无天窗</label>
+                        <input  type="text" name="" class="form-control input-sm" value="333333">
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">*保险情况</label>
+                        <input  type="text" name="" class="form-control input-sm" value="2">
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">指导价(元)</label>
+                        <input  type="text" name="" class="form-control input-sm disabled">
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">*出厂日期</label>
+                        <input  type="date" name="" class="form-control input-sm" value="">
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">*??</label>
+                        <input  type="text" name="" class="form-control input-sm" value="2">
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">排放标准</label>
+                        <input  type="text" name="" class="form-control input-sm disabled">
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">是否公司车</label>
+                        <input  type="text" name="" class="form-control input-sm" value="333333">
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">抵押次数</label>
+                        <input  type="text" name="" class="form-control input-sm" value="2">
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">*车况介绍</label>
+                        <input  type="text" name="" class="form-control input-sm disabled">
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">*是否按揭</label>
+                        <input  type="text" name="" class="form-control input-sm" value="333333">
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">过户次数</label>
+                        <input  type="text" name="" class="form-control input-sm" value="2">
+                    </div>
+                    <div class="form-group col-xs-4 form-inline">
+                        <label class="control-label">车牌额度</label>
+                        <input  type="text" name="" class="form-control input-sm" value="2">
+                    </div>
+            		<div class=" pull-right col-xs-8">
+            		<button type="submit" style="margin:10px;" class="btn btn-info disabled"><i class="glyphicon glyphicon-check"></i>保存</button>
+            		<button type="button" style="margin:10px;" class="btn btn-info"><i class="glyphicon glyphicon-remove"></i>取消</button>
+            		</div>
+            	</form>
+            	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+        </div>
+    </div>
+<!-- 抵押物信息 end -->
+<!-- 估价信息  start-->
+
+    <div id="priceInfo" class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2><i class="glyphicon glyphicon-edit"></i>估价信息</h2>
+
+                <div class="box-icon">
+                    <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                            class="glyphicon glyphicon-chevron-up"></i></a>
+                </div>
+            </div>
+            <div class="box-content">        
+                <form role="form">
+                    <table class="table table-striped table-bordered responsive">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>车辆信息</th>
+                            <th>车架号</th>
+                            <th>车牌号</th>
+                            <th>系统估价</th>
+                            <th>人工估价</th>
+                            <th>创建时间</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th>183302</th>
+                            <th>路虎Range Rover(揽胜)</th>
+                            <th>SALGA3VF3AF134242</th>
+                            <th>浙A23444</th>
+                            <th>111111</th>
+                            <th>未估价</th>
+                            <th>2016/6/12</th>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class=" pull-right col-xs-8">
+                    <button type="button" style="margin:10px" class="btn btn-info">人工估价</button>
+                    <button type="button" style="margin:10px;" class="btn btn-info disabled"><i class="glyphicon glyphicon-check"></i>刷新</button>
+                    <button type="button" style="margin:10px;" class="btn btn-info"><i class="glyphicon glyphicon-remove"></i>查看影像</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+<!-- 估价信息 end -->
+
+    <!-- jQuery -->
+    <script src="sources/jquery/jquery.min.js"></script>
+   <script src="sources/bootstrap/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="sources/jquery-validation-1.15.0/dist/jquery.validate.min.js"></script>
+<!-- build:js js/vender.js -->
+   <!-- library for cookie management 与多项选择相关 -->
+<script src="sources/charisma-master/js/jquery.cookie.js"></script>
+
+<script src="sources/charisma-master/js/jquery.noty.js"></script>
+
+<!-- data table plugin -->
+<script src='sources/charisma-master/js/jquery.dataTables.min.js'></script>
+<!-- select or dropdown enhancer -->
+<script src="sources/charisma-master/bower_components/chosen/chosen.jquery.min.js"></script>
+<!-- plugin for gallery image view -->
+<script src="sources/charisma-master/bower_components/colorbox/jquery.colorbox-min.js"></script>
+<!-- star rating plugin -->
+<script src="sources/charisma-master/js/jquery.raty.min.js"></script>
+<!-- for iOS style toggle switch -->
+<script src="sources/charisma-master/js/jquery.iphone.toggle.js"></script>
+<!-- autogrowing textarea plugin -->
+<script src="sources/charisma-master/js/jquery.autogrow-textarea.js"></script>
+<!-- multiple file upload plugin -->
+<script src="sources/charisma-master/js/jquery.uploadify-3.1.min.js"></script>
+<!-- history.js for cross-browser state change on ajax -->
+<script src="sources/charisma-master/js/jquery.history.js"></script>
+<!-- application script for Charisma demo -->
+<script src="sources/charisma-master/js/charisma.js"></script>
+<!-- endbuild -->
+<script type="text/javascript" src="js/customize-validate.js"></script>
+<script type="text/javascript">
+
+//借款人信息表单验证
+var loanInfoValidator = function(){
+    var handleSubmit = function(){
+        $('#loanInfoV').validate({
+            errorElement : "span",
+            errorClass : "label label-danger",
+            focusInvalid : false,
+            rules : {
+                cusName : {
+                    required : true,
+                    name: true
+                },
+                cusId : {
+                    required : true,
+                    idNumber : true,
+                    name : false
+                }
+            },
+            messages : {
+                cusName : {
+                    required : "该字段必填"
+                },
+                cusId : {
+                    required : "该字段必填"
+                }
+            },
+            highlight : function(ele){
+                $(ele).closest('.form-group').addClass('has-error');
+            },
+            success : function(label){
+                $(label).closest('.form-group').removeClass('has-error');
+                $(label).closest('.form-group').children('.label').remove();
+            },
+            errorPlacement : function(error, element){
+                var _value = $(element).val()
+                if(_value == "" || _value == null || _value == undefined){
+                    element.parent('div').append(error);
+                }
+            },
+            submitHandler : function(form){
+                form.submit();
+            }
+        });
+        $('#loanInfoV input').blur(function(e){
+            // if(e.which == 13){
+                if($('#loanInfoV').validate().form()){
+                    $('#loanInfoV').submit();
+                }
+            // }
+        })
+    };
+    return {
+        init : function(){handleSubmit();}
+    }
+}();
+
+//抵押物信息较验
+var pawnInfoValidator = function(){
+    var handleSubmit = function(){
+        $('#pawnInfoV').validate({
+            errorElement : "span",
+            errorClass : "label label-danger",
+            focusInvalid : false,
+            rules : {
+                cusName : {
+                    required : true,
+                    name: true
+                },
+                cusId : {
+                    required : true,
+                    idNumber : true,
+                    name : false
+                }
+            },
+            messages : {
+                cusName : {
+                    required : "该字段必填"
+                },
+                cusId : {
+                    required : "该字段必填"
+                }
+            },
+            highlight : function(ele){
+                $(ele).closest('.form-group').addClass('has-error');
+            },
+            success : function(label){
+                $(label).closest('.form-group').removeClass('has-error');
+                $(label).closest('.form-group').children('.label').remove();
+            },
+            errorPlacement : function(error, element){
+                var _value = $(element).val()
+                if(_value == "" || _value == null || _value == undefined){
+                    element.parent('div').append(error);
+                }
+            },
+            submitHandler : function(form){
+                form.submit();
+            }
+        });
+        $('#loanInfoV input').blur(function(e){
+            // if(e.which == 13){
+                if($('#loanInfoV').validate().form()){
+                    $('#loanInfoV').submit();
+                }
+            // }
+        })
+    };
+    return {
+        init : function(){handleSubmit();}
+    }
+}();
+
+loanInfoValidator.init();
+</script>
+</body>
+</html>
